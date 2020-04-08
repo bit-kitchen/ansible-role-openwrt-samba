@@ -1,0 +1,17 @@
+galaxy_info:
+  author: bit_kitchen
+  role_name: openwrt_samba
+
+  description: Configure OpenWrt for samba server
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  galaxy_tags:
+  - samba
+  - openwrt
+  - system
+
+dependencies:
+- gekmihesg.openwrt
+- bit_kitchen.openwrt_storage

@@ -1,0 +1,12 @@
+---
+# https://openwrt.org/docs/guide-user/services/nas/samba_configuration
+# https://openwrt.org/docs/guide-user/services/nas/cifs.server
+
+- name: Install samba36-server
+  opkg:
+    name: samba36-server
+
+- name: Install luci-app-samba
+  when: samba_luci
+  opkg:
+    name: luci-app-samba

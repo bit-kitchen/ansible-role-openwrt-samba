@@ -1,0 +1,9 @@
+---
+- name: uci commit
+  uci:
+    command: commit
+
+- name: service samba restart
+  service:
+    name: samba
+    state: restarted
