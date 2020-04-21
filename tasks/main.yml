@@ -2,14 +2,25 @@
 # https://openwrt.org/docs/guide-user/services/nas/samba_configuration
 # https://openwrt.org/docs/guide-user/services/nas/cifs.server
 
-- name: Install samba36-server
-  opkg:
-    name: samba36-server
-
-- name: Install luci-app-samba
-  when: samba_luci
-  opkg:
-    name: luci-app-samba
+- name: Install Samba
+  block:
+  # OpenWrt 19.07
+  - name: Install samba4-server
+    opkg:
+      name: samba4-server
+  - name: Install luci-app-samba4
+    when: samba_luci
+    opkg:
+      name: luci-app-samba4
+  rescue:
+  # OpenWrt 18.04
+  - name: Install samba36-server
+    opkg:
+      name: samba36-server
+  - name: Install luci-app-samba
+    when: samba_luci
+    opkg:
+      name: luci-app-samba
 
 - name: Find USB drive mount point
   shell: block info | grep /dev/sd | grep -v swap | grep -o -E 'MOUNT="[^"]+"' | cut -d\" -f2
