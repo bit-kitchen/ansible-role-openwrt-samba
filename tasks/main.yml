@@ -10,3 +10,25 @@
   when: samba_luci
   opkg:
     name: luci-app-samba
+
+- name: Find USB drive mount point
+  shell: block info | grep /dev/sd | grep -v swap | grep -o -E 'MOUNT="[^"]+"' | cut -d\" -f2
+  register: block_mount
+  changed_when: no
+
+- name: Configure Samba Share
+  uci:
+    command: section
+    config: samba
+    type: sambashare
+    find_by:
+      path: "{{ block_mount.stdout }}"
+    value:
+      name: "{{ block_mount.stdout | basename }}"
+      path: "{{ block_mount.stdout }}"
+      create_mask: "{{ samba_create_mask }}"
+      dir_mask: "{{ samba_dir_mask }}"
+      read_only: "{{ 'yes' if samba_read_only else 'no' }}"
+      guest_ok: "{{ 'yes' if samba_guest_ok else 'no' }}"
+      browserable: "{{ 'yes' if samba_browserable else 'no' }}"
+      users: "{{ samba_users }}"

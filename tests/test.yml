@@ -4,4 +4,11 @@
   remote_user: root
   gather_facts: no
   roles:
-    - ../..
+    - role: ../..
+      #samba_luci: yes
+      #samba_create_mask: '0700'
+      #samba_dir_mask: '0700'
+      #samba_read_only: no
+      #samba_guest_ok: yes
+      #samba_browserable: yes
+      #samba_users: 'anonymous'
