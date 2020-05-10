@@ -1,5 +1,6 @@
 ---
 samba_luci: yes
+samba_wsd: yes
 samba_create_mask: '0700'
 samba_dir_mask: '0700'
 samba_read_only: no

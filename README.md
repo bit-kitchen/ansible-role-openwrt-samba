@@ -14,6 +14,7 @@ Role Variables
 Variable   | Default | Comment
 ---------- | ------- | -------
 samba_luci | yes     | Install samba luci app
+samba_wsd  | yes     | Install wsdd2 for [WSD](https://en.wikipedia.org/wiki/Web_Services_for_Devices) support which enables file share discovery on Windows
 
 Dependencies
 ------------
