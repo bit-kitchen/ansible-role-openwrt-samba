@@ -13,5 +13,7 @@ galaxy_info:
   - system
 
 dependencies:
-- gekmihesg.openwrt
+- role: gekmihesg.openwrt
+  vars:
+    openwrt_install_recommended_packages: no
 - bit_kitchen.openwrt_storage
