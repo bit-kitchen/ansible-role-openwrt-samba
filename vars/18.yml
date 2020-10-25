@@ -1,0 +1,4 @@
+---
+_samba_server_package: samba36-server
+_luci_app_samba_package: luci-app-samba
+_samba_name: samba

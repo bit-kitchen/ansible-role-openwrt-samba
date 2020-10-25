@@ -1,2 +1,4 @@
 ---
-# vars file for openwrt-samba
+_samba_server_package: samba4-server
+_luci_app_samba_package: luci-app-samba4
+_samba_name: samba4

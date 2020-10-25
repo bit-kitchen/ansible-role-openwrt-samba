@@ -5,5 +5,5 @@
 
 - name: service samba restart
   service:
-    name: samba
+    name: "{{ _samba_name }}"
     state: restarted
