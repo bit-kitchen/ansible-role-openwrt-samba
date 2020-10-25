@@ -38,6 +38,9 @@
       guest_ok: "{{ 'yes' if samba_guest_ok else 'no' }}"
       browserable: "{{ 'yes' if samba_browserable else 'no' }}"
       users: "{{ samba_users }}"
+  notify:
+  - uci commit
+  - service samba restart
 
 - name: Install wsdd2
   when: samba_wsd
