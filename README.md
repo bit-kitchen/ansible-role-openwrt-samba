@@ -1,6 +1,13 @@
 ansible-role-openwrt-samba
 ==========================
 
+[![Ansible Role: bit_kitchen.openwrt_samba](https://img.shields.io/ansible/role/51482.svg)](https://galaxy.ansible.com/bit_kitchen/openwrt_samba)
+[![Build Status: bit-kitchen/ansible-role-openwrt-samba](https://travis-ci.org/bit-kitchen/ansible-role-openwrt-samba.svg?branch=master)](https://travis-ci.org/bit-kitchen/ansible-role-openwrt-samba)
+
+```sh
+ansible-galaxy install bit_kitchen.openwrt_samba
+```
+
 Configure OpenWrt for samba server.
 
 Requirements
