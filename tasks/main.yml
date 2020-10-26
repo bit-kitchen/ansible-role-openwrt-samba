@@ -41,6 +41,7 @@
   notify:
   - uci commit
   - service samba restart
+  when: block_mount.stdout != ""
 
 - name: Install wsdd2
   when: samba_wsd
